@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;1,300;1,800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    padding: 2rem;
+    font-family: 'Prompt', sans-serif;
+    background-color: rgb(36, 36, 36);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background-color: #FFC042;
+    /* background-color: #FF6600; */
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+
+
+.container-characters{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 3vh;
+}
+
+
+.container-characters article > img{
+    width: 50%;
+    height: 150px;
+}
+
+.title-page{
+    color: #FFC042;
+    margin-bottom: 1rem;
+}
+
