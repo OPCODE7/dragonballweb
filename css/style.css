@@ -1,3 +1,7 @@
+:root{
+    --box-shadow-card: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; 
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;1,300;1,800&display=swap');
 
 *{
@@ -14,6 +18,8 @@ body{
     padding: 2rem;
     font-family: 'Prompt', sans-serif;
     background-color: rgb(36, 36, 36);
+    position: relative;
+    min-height: 100vh;
 }
 
 .card{
@@ -23,9 +29,8 @@ body{
     align-items: center;
     padding: 1rem;
     border-radius: 5px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    box-shadow: var(--box-shadow-card);
     background-color: #FFC042;
-    /* background-color: #FF6600; */
     cursor: pointer;
 }
 
@@ -52,5 +57,84 @@ body{
 .title-page{
     color: #FFC042;
     margin-bottom: 1rem;
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    background-color: #ADADAD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-icon{
+    width: 20%;
+    height: 25%;
+    animation-name: loader-animation;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    position: relative;
+}
+
+.loader-icon::after{
+    content: '';
+    width: 100px;
+    height: 20px;
+    border-radius: 70%;
+    background-color: rgba(14, 30, 37, 0.664);
+    position: absolute;
+    left: 40%;
+    transform: translateX(-40%);
+    bottom: -.5rem;
+}
+
+.loader-icon > img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes loader-animation{
+    0%{
+        transform: translateY(-.5rem);
+    }
+    25%{
+        transform: translateY(.5rem);
+    }
+    50%{
+        transform: translateY(.5rem);
+    }
+    100%{
+        transform: translateY(-.5rem);
+    }
+}
+
+.error-modal{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #FFC042;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-card);
+    padding: 1rem;
+}
+
+.error-modal p{
+    text-align: center;
+    font-family: inherit;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
 }
 
